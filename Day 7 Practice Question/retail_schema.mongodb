@@ -548,6 +548,7 @@ db.orders.findOne({
 // ============================================
 
 /*
+Steps
 1. Use compound indexes for queries with multiple filters
 2. Create text indexes for search functionality
 3. Use unique indexes on email and username for data integrity
