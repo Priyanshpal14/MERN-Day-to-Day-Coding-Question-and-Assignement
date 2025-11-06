@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog & Todo Platform - Fetch API Assignment</title>
+
+  <!-- Link CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <!-- Application Header -->
+    <header>
+      <h1>📝 Blogging Platform with Todo Management</h1>
+      <p class="subtitle">Fetch API Assignment - JSONPlaceholder Integration</p>
+    </header>
+
+    <!-- Main Content Grid -->
+    <div class="content-wrapper">
+      <!-- Posts Section -->
+      <div class="section" id="posts-section">
+        <div class="section-header">
+          <h2>📰 Blog Posts</h2>
+          <button class="refresh-btn" onclick="BlogPlatform.fetchAndDisplayPosts()">
+            🔄 Refresh Posts
+          </button>
+        </div>
+        <div id="posts-container">
+          <div class="loading">
+            <div class="spinner"></div>
+            <p>Fetching blog posts...</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Todos Section -->
+      <div class="section" id="todos-section">
+        <div class="section-header">
+          <h2>✅ Todo List</h2>
+          <button class="refresh-btn" onclick="BlogPlatform.fetchAndDisplayTodos()">
+            🔄 Refresh Todos
+          </button>
+        </div>
+        <div id="todos-container">
+          <div class="loading">
+            <div class="spinner"></div>
+            <p>Fetching todo list...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Link JS -->
+  <script src="script.js"></script>
+</body>
+</html>

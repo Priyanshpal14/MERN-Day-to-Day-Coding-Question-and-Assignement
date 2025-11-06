@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Flowers School - Student Management</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header with Logo and Menu (Hidden initially) -->
+    <header id="header">
+        <div class="header-content">
+            <!-- School Logo -->
+            <div class="logo">
+                <div class="logo-icon">🌸</div>
+                <div class="school-name">Spring Flowers School</div>
+            </div>
+            
+            <!-- Menu Bar -->
+            <nav class="menu">
+                <button onclick="showHome()">Home</button>
+                <button onclick="showProfile()">Student Profile</button>
+                <button onclick="showActivities()">Monthly Chart</button>
+                <button class="logout-btn" onclick="logout()">Logout</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Login/Register Section -->
+        <section id="auth" class="auth-section">
+            <h2>Spring Flowers School</h2>
+            
+            <div class="auth-tabs">
+                <button id="loginTab" class="active" onclick="showLoginForm()">Login</button>
+                <button id="registerTab" onclick="showRegisterForm()">Register</button>
+            </div>
+
+            <!-- Login Form -->
+            <div id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" placeholder="Enter your password">
+                </div>
+                <button class="btn-submit" onclick="handleLogin()">Login</button>
+                <div id="loginError" class="error-message"></div>
+            </div>
+
+            <!-- Register Form -->
+            <div id="registerForm" style="display: none;">
+                <div class="form-group">
+                    <label for="registerUsername">Username</label>
+                    <input type="text" id="registerUsername" placeholder="Choose a username">
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" placeholder="Choose a password">
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">Confirm Password</label>
+                    <input type="password" id="registerConfirmPassword" placeholder="Confirm your password">
+                </div>
+                <button class="btn-submit" onclick="handleRegister()">Register</button>
+                <div id="registerError" class="error-message"></div>
+                <div id="registerSuccess" class="success-message"></div>
+            </div>
+        </section>
+
+        <!-- Welcome Page -->
+        <section id="welcome" class="welcome-section">
+            <div class="welcome-user" id="welcomeUser"></div>
+            <h1>Welcome to Spring Flowers School</h1>
+            <p>Your journey to excellence starts here!</p>
+            <p>We are committed to providing quality education and nurturing young minds.</p>
+        </section>
+
+        <!-- Student Profile Page -->
+        <section id="profile" class="profile-section">
+            <h2>Student Profile</h2>
+            
+            <div class="profile-card">
+                <div class="profile-picture" id="profileInitials">RS</div>
+                
+                <div class="profile-details">
+                    <table>
+                        <tr>
+                            <td>Full Name:</td>
+                            <td id="profileName">Raj Singh</td>
+                        </tr>
+                        <tr>
+                            <td>Student ID:</td>
+                            <td>SF-2024-001</td>
+                        </tr>
+                        <tr>
+                            <td>Class:</td>
+                            <td>12th Grade - Section A</td>
+                        </tr>
+                        <tr>
+                            <td>Date of Birth:</td>
+                            <td>April 17, 2010</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td id="profileEmail">raj.singh@springflowers.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Phone:</td>
+                            <td>+91 52648-97635</td>
+                        </tr>
+                        <tr>
+                            <td>Address:</td>
+                            <td>123 Main Street, Springfield, Chandigarh</td>
+                        </tr>
+                        <tr>
+                            <td>Parent/Guardian:</td>
+                            <td>Sartaj Singh</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Monthly Activities Section -->
+        <section id="activities" class="activities-section">
+            <h2>Monthly Activities Chart</h2>
+            
+            <div class="subject-selector">
+                <label for="subjectSelect">Select Subject:</label>
+                <select id="subjectSelect" onchange="filterActivities()">
+                    <option value="all">All Subjects</option>
+                    <option value="Maths">Maths</option>
+                    <option value="English">English</option>
+                    <option value="Science">Science</option>
+                    <option value="History">History</option>
+                    <option value="Computer">Computer</option>
+                </select>
+            </div>
+
+            <div class="activities-list" id="activitiesList">
+                <!-- Activities will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Spring Flowers School. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

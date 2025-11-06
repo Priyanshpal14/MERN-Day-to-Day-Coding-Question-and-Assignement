@@ -1,0 +1,110 @@
+// ============================================
+// MONGODB SCHEMA DESIGN FOR ONLINE RETAIL SYSTEM
+// ============================================
+
+// 4. QUERYING AND INDEXING
+// ============================================
+
+// Proposed Indexes for Optimization
+
+// Products Collection Indexes
+db.products.createIndex({ "category": 1, "subcategory": 1 });
+// Purpose: Optimize queries filtering by category and subcategory
+// Usage: Find all electronics in audio category
+
+db.products.createIndex({ "name": "text", "description": "text" });
+// Purpose: Enable full-text search on product names and descriptions
+// Usage: Search for products by keywords
+
+db.products.createIndex({ "stockAvailability.inStock": 1, "category": 1 });
+// Purpose: Quickly find in-stock products by category
+// Usage: Display available products to customers
+
+db.products.createIndex({ "price": 1 });
+// Purpose: Optimize price-range queries and sorting
+// Usage: Filter products by price range
+
+db.products.createIndex({ "rating.average": -1 });
+// Purpose: Sort products by rating (descending)
+// Usage: Show top-rated products
+
+// Orders Collection Indexes
+db.orders.createIndex({ "userId": 1, "orderDate": -1 });
+// Purpose: Retrieve all orders for a specific user, sorted by date
+// Usage: User order history page
+
+db.orders.createIndex({ "orderNumber": 1 }, { unique: true });
+// Purpose: Ensure unique order numbers and enable quick lookup
+// Usage: Track order by order number
+
+db.orders.createIndex({ "status": 1, "orderDate": -1 });
+// Purpose: Filter orders by status and date
+// Usage: Admin dashboard showing pending orders
+
+db.orders.createIndex({ "products.productId": 1 });
+// Purpose: Find all orders containing a specific product
+// Usage: Product popularity analysis
+
+db.orders.createIndex({ "tracking.trackingNumber": 1 });
+// Purpose: Look up orders by tracking number
+// Usage: Customer tracking inquiries
+
+// Users Collection Indexes
+db.users.createIndex({ "email": 1 }, { unique: true });
+// Purpose: Ensure unique emails and enable quick login lookup
+// Usage: User authentication
+
+db.users.createIndex({ "username": 1 }, { unique: true });
+// Purpose: Ensure unique usernames and enable quick lookup
+// Usage: User profile retrieval
+
+db.users.createIndex({ "accountStatus": 1 });
+// Purpose: Filter users by account status
+// Usage: Admin user management
+
+// ============================================
+// Sample Queries Demonstrating Index Efficiency
+// ============================================
+
+// Query 1: Find all electronics products that are in stock
+db.products.find({
+  "category": "Electronics",
+  "stockAvailability.inStock": true
+}).sort({ "rating.average": -1 });
+// Uses: category + inStock compound index
+
+// Query 2: Search for products by keyword
+db.products.find({
+  $text: { $search: "wireless bluetooth" }
+});
+// Uses: text index on name and description
+
+// Query 3: Find all orders for a specific user
+db.orders.find({
+  "userId": ObjectId("507f191e810c19729de860ea")
+}).sort({ "orderDate": -1 });
+// Uses: userId + orderDate compound index
+
+// Query 4: Get user by email for authentication
+db.users.findOne({
+  "email": "john.smith@email.com"
+});
+// Uses: unique email index
+
+// Query 5: Find all orders containing a specific product
+db.orders.find({
+  "products.productId": ObjectId("507f1f77bcf86cd799439011")
+});
+// Uses: products.productId index
+
+// Query 6: Find products in price range
+db.products.find({
+  "price": { $gte: 20, $lte: 100 },
+  "stockAvailability.inStock": true
+}).sort({ "price": 1 });
+// Uses: price index and inStock index
+
+// Query 7: Track order by tracking number
+db.orders.findOne({
+  "tracking.trackingNumber": "FDX1234567890"
+});

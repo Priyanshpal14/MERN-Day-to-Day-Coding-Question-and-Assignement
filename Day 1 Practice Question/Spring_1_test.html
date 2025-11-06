@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Flowers School</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Reset basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        /* Header with logo and menu - Using Flexbox */
+        header {
+            background-color: #646467;
+            color: white;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* School Logo - Flexbox */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background-color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+        }
+
+        .school-name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        /* Menu Bar - Flexbox for responsive layout */
+        .menu {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .menu button {
+            background-color: white;
+            color: #000000;
+            border: none;
+            padding: 12px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .menu button:hover {
+            background-color: #000000;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Main Content Area */
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            background-color: white;
+            padding: 60px 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .welcome-section h1 {
+            color: #000000;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .welcome-section p {
+            color: #000000;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+
+        /* Student Profile Section - Flexbox */
+        .profile-section {
+            display: none;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .profile-section.active {
+            display: block;
+        }
+
+        .profile-section h2 {
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 32px;
+            border-bottom: 3px solid #646467;
+            padding-bottom: 10px;
+        }
+
+        .profile-card {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .profile-picture {
+            width: 150px;
+            height: 150px;
+            background-color: #646467;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+        }
+
+        .profile-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .profile-details table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .profile-details table tr {
+            border-bottom: 1px solid #ddd;
+        }
+
+        .profile-details table td {
+            padding: 15px;
+            font-size: 16px;
+        }
+
+        .profile-details table td:first-child {
+            font-weight: bold;
+            color: #333;
+            width: 200px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #646467;
+            color: white;
+            margin-top: 40px;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .menu {
+                justify-content: center;
+            }
+
+            .menu button {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+
+            .school-name {
+                font-size: 20px;
+            }
+
+            .welcome-section h1 {
+                font-size: 32px;
+            }
+
+            .welcome-section p {
+                font-size: 16px;
+            }
+
+            .welcome-section {
+                padding: 40px 20px;
+            }
+
+            .profile-section {
+                padding: 20px;
+            }
+
+            .profile-section h2 {
+                font-size: 24px;
+            }
+
+            .profile-card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-picture {
+                width: 120px;
+                height: 120px;
+                font-size: 50px;
+            }
+
+            .profile-details table td:first-child {
+                width: 120px;
+            }
+
+            main {
+                padding: 10px;
+                margin: 20px auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+
+            .school-name {
+                font-size: 18px;
+            }
+
+            .menu button {
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+
+            .profile-details table td {
+                padding: 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Logo and Menu -->
+    <header>
+        <div class="header-content">
+            <!-- School Logo -->
+            <div class="logo">
+                <div class="logo-icon">🌸</div>
+                <div class="school-name">Spring Flowers School</div>
+            </div>
+            
+            <!-- Menu Bar -->
+            <nav class="menu">
+                <button onclick="showHome()">Home</button>
+                <button onclick="showProfile()">Student Profile</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Welcome Page -->
+        <section id="welcome" class="welcome-section">
+            <h1>Welcome to Spring Flowers School</h1>
+            <p>Your journey to excellence starts here!</p>
+            <p>We are committed to providing quality education and nurturing young minds.</p>
+        </section>
+
+        <!-- Student Profile Page -->
+        <section id="profile" class="profile-section">
+            <h2>Student Profile</h2>
+            
+            <div class="profile-card">
+                <div class="profile-picture">RS</div>
+                
+                <div class="profile-details">
+                    <table>
+                        <tr>
+                            <td>Full Name:</td>
+                            <td>Raj Singh</td>
+                        </tr>
+                        <tr>
+                            <td>Student ID:</td>
+                            <td>SF-2024-001</td>
+                        </tr>
+                        <tr>
+                            <td>Class:</td>
+                            <td>12th Grade - Section A</td>
+                        </tr>
+                        <tr>
+                            <td>Date of Birth:</td>
+                            <td>April 17, 2010</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>raj.singh@springflowers.edu</td>
+                        </tr>
+                        <tr>
+                            <td>Phone:</td>
+                            <td>+91 52648-97635</td>
+                        </tr>
+                        <tr>
+                            <td>Address:</td>
+                            <td>123 Main Street, Springfield, Chandigarh</td>
+                        </tr>
+                        <tr>
+                            <td>Parent/Guardian:</td>
+                            <td>Sartaj Singh</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Spring Flowers School. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript for Navigation -->
+    <script>
+        function showHome() {
+            document.getElementById('welcome').style.display = 'block';
+            document.getElementById('profile').classList.remove('active');
+        }
+
+        function showProfile() {
+            document.getElementById('welcome').style.display = 'none';
+            document.getElementById('profile').classList.add('active');
+        }
+    </script>
+</body>
+</html>

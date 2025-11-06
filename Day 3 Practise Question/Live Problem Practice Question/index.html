@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System - ES6 Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+
+        .header {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .demo-button {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 30px;
+            font-size: 16px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .demo-button:hover {
+            background: #5568d3;
+        }
+
+        .section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+
+        .student-card {
+            background: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 10px;
+            margin: 3px;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th {
+            background: #667eea;
+            color: white;
+            padding: 10px;
+            text-align: left;
+        }
+
+        td {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .greeting-box {
+            background: #e8eaf6;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Student Management System</h1>
+        <p>ES6 Features Demo</p>
+    </div>
+
+    <button class="demo-button" onclick="runDemo()">Run Assignment Demo</button>
+    
+    <div id="output"></div>
+
+    <script>
+        // ES6 Class Definition
+        class Student {
+            constructor(name, age, skills) {
+                this.name = name;
+                this.age = age;
+                this.skills = skills;
+            }
+
+            display() {
+                return `
+                    <div class="student-card">
+                        <h3>${this.name}</h3>
+                        <p>Age: ${this.age} years</p>
+                        <p><strong>Skills:</strong><br>
+                        ${this.skills.map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                        </p>
+                    </div>
+                `;
+            }
+        }
+
+        // Arrow Function for greeting
+        const greet = (name) => `Welcome to Spring Flowers School, ${name}!`;
+
+        function runDemo() {
+            // 1. Use of let and const
+            let courseName = "Full Stack Development";
+            const instituteName = "Spring Flowers School";
+
+            // 2. Use of Spread Operator
+            const coreSubjects = ["Mathematics", "English", "Science", "Social Studies"];
+            const advancedSubjects = ["Data Structures", "Web Development", "Database Management"];
+            const allSubjects = [...coreSubjects, ...advancedSubjects];
+
+            // 4. Create Student Objects using Class
+            const student1 = new Student("Raj Pal", 20, ["JavaScript", "HTML", "CSS", "React"]);
+            const student2 = new Student("Tamma Bajpai", 21, ["Python", "Java", "HTML", "CSS", "JavaScript"]);
+
+            // 5. Use of Map Object for Grades
+            const studentGrades = new Map();
+            studentGrades.set("Raj Pal", "A");
+            studentGrades.set("Tamma Bajpai", "A+");
+            studentGrades.set("Shivam Singh", "B+");
+            studentGrades.set("Paras Vanve", "A");
+
+            // 6. Use of Set Object for Unique Skills
+            const allSkills = new Set([
+                "JavaScript", "HTML", "CSS", "React", "Python", 
+                "Java", "HTML", "CSS", "JavaScript", "Node.js", 
+                "MongoDB", "React", "Python"
+            ]);
+
+            // Generate Output HTML
+            let outputHTML = `
+                <div class="section">
+                    <h2>1. Course Information (let & const)</h2>
+                    <p><strong>Course Name:</strong> ${courseName} (declared with let)</p>
+                    <p><strong>Institute Name:</strong> ${instituteName} (declared with const)</p>
+                </div>
+
+                <div class="section">
+                    <h2>2. Spread Operator - All Subjects</h2>
+                    <p><strong>Core Subjects:</strong> ${coreSubjects.join(", ")}</p>
+                    <p><strong>Advanced Subjects:</strong> ${advancedSubjects.join(", ")}</p>
+                    <p><strong>All Subjects (merged):</strong> ${allSubjects.join(", ")}</p>
+                </div>
+
+                <div class="section">
+                    <h2>3. Arrow Function - Greeting</h2>
+                    <div class="greeting-box">${greet(student1.name)}</div>
+                    <div class="greeting-box">${greet(student2.name)}</div>
+                </div>
+
+                <div class="section">
+                    <h2>4. Student Class - Student Details</h2>
+                    ${student1.display()}
+                    ${student2.display()}
+                </div>
+
+                <div class="section">
+                    <h2>5. Map Object - Student Grades</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Student Name</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            ${Array.from(studentGrades).map(([name, grade]) => `
+                                <tr>
+                                    <td>${name}</td>
+                                    <td><strong>${grade}</strong></td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="section">
+                    <h2>6. Set Object - Unique Skills</h2>
+                    <p><strong>All unique skills (duplicates removed):</strong></p>
+                    <div>
+                        ${Array.from(allSkills).map(skill => `<span class="skill-tag">${skill}</span>`).join('')}
+                    </div>
+                    <p style="margin-top: 15px;"><em>Total unique skills: ${allSkills.size}</em></p>
+                </div>
+            `;
+
+            document.getElementById('output').innerHTML = outputHTML;
+        }
+    </script>
+</body>
+</html>

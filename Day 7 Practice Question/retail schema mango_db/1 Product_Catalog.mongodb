@@ -1,0 +1,151 @@
+// ============================================
+// MONGODB SCHEMA DESIGN FOR ONLINE RETAIL SYSTEM
+// ============================================
+
+// 1. PRODUCT CATALOG SCHEMA
+
+// Products Collection Schema
+const productSchema = {
+  _id: ObjectId,
+  name: String,
+  category: String,
+  subcategory: String,
+  price: Number,
+  currency: String,
+  stockAvailability: {
+    inStock: Boolean,
+    quantity: Number,
+    warehouse: String
+  },
+  attributes: {
+    brand: String,
+    color: String,
+    size: String,
+    weight: Number,
+    dimensions: {
+      length: Number,
+      width: Number,
+      height: Number,
+      unit: String
+    }
+  },
+  description: String,
+  images: [String],
+  rating: {
+    average: Number,
+    count: Number
+  },
+  createdAt: Date,
+  updatedAt: Date
+};
+
+// Sample Product Documents
+const sampleProducts = [
+  {
+    _id: ObjectId("507f1f77bcf86cd799439011"),
+    name: "Wireless Bluetooth Headphones",
+    category: "Electronics",
+    subcategory: "Audio",
+    price: 79.99,
+    currency: "USD",
+    stockAvailability: {
+      inStock: true,
+      quantity: 150,
+      warehouse: "WH-EAST-01"
+    },
+    attributes: {
+      brand: "SoundMax",
+      color: "Black",
+      size: "Standard",
+      weight: 0.25,
+      dimensions: {
+        length: 18,
+        width: 16,
+        height: 8,
+        unit: "cm"
+      }
+    },
+    description: "Premium wireless headphones with active noise cancellation and 30-hour battery life",
+    images: [
+      "https://example.com/images/headphones-1.jpg",
+      "https://example.com/images/headphones-2.jpg"
+    ],
+    rating: {
+      average: 4.5,
+      count: 328
+    },
+    createdAt: ISODate("2024-01-15T10:30:00Z"),
+    updatedAt: ISODate("2024-10-20T14:22:00Z")
+  },
+  {
+    _id: ObjectId("507f1f77bcf86cd799439012"),
+    name: "Cotton T-Shirt - Classic Fit",
+    category: "Clothing",
+    subcategory: "Men's Apparel",
+    price: 24.99,
+    currency: "USD",
+    stockAvailability: {
+      inStock: true,
+      quantity: 500,
+      warehouse: "WH-WEST-02"
+    },
+    attributes: {
+      brand: "ComfortWear",
+      color: "Navy Blue",
+      size: "L",
+      weight: 0.2,
+      dimensions: {
+        length: 75,
+        width: 55,
+        height: 1,
+        unit: "cm"
+      }
+    },
+    description: "100% organic cotton t-shirt with classic fit and premium fabric",
+    images: [
+      "https://example.com/images/tshirt-navy-1.jpg",
+      "https://example.com/images/tshirt-navy-2.jpg"
+    ],
+    rating: {
+      average: 4.7,
+      count: 892
+    },
+    createdAt: ISODate("2024-03-10T08:15:00Z"),
+    updatedAt: ISODate("2024-10-25T11:45:00Z")
+  },
+  {
+    _id: ObjectId("507f1f77bcf86cd799439013"),
+    name: "Stainless Steel Water Bottle",
+    category: "Home & Kitchen",
+    subcategory: "Drinkware",
+    price: 19.99,
+    currency: "USD",
+    stockAvailability: {
+      inStock: false,
+      quantity: 0,
+      warehouse: "WH-CENTRAL-03"
+    },
+    attributes: {
+      brand: "HydroLife",
+      color: "Silver",
+      size: "750ml",
+      weight: 0.3,
+      dimensions: {
+        length: 26,
+        width: 7,
+        height: 7,
+        unit: "cm"
+      }
+    },
+    description: "Double-walled insulated water bottle keeps drinks cold for 24 hours or hot for 12 hours",
+    images: [
+      "https://example.com/images/bottle-silver-1.jpg"
+    ],
+    rating: {
+      average: 4.8,
+      count: 1205
+    },
+    createdAt: ISODate("2024-02-20T12:00:00Z"),
+    updatedAt: ISODate("2024-10-28T09:30:00Z")
+  }
+];
