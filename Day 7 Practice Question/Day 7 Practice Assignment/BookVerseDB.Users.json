@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "690ce14a47bf7095b763b115"
+  },
+  "name": "Alice Johnson",
+  "email": "alice@email.com",
+  "joinDate": {
+    "$date": "2024-08-15T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "690ce14a47bf7095b763b116"
+  },
+  "name": "Bob Smith",
+  "email": "bob@email.com",
+  "joinDate": {
+    "$date": "2024-10-01T00:00:00.000Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "690ce14a47bf7095b763b117"
+  },
+  "name": "Carol White",
+  "email": "carol@email.com",
+  "joinDate": {
+    "$date": "2024-09-20T00:00:00.000Z"
+  }
+}]

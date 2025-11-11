@@ -1,0 +1,76 @@
+{
+  "books": [
+    {
+      "id": 1,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "genre": "Classic Fiction",
+      "year": 1925,
+      "rating": 4.5,
+      "description": "A story of decadence and excess, The Great Gatsby explores themes of idealism, resistance to change, and social upheaval in the American Dream.",
+      "cover": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?w=300&h=400&fit=crop",
+      "pages": 180,
+      "publisher": "Scribner"
+    },
+    {
+      "id": 2,
+      "title": "To Kill a Mockingbird",
+      "author": "Harper Lee",
+      "genre": "Classic Fiction",
+      "year": 1960,
+      "rating": 4.8,
+      "description": "A gripping tale of racial injustice and childhood innocence in the American South during the 1930s.",
+      "cover": "https://images.unsplash.com/photo-1512820790803-83ca734da794?w=300&h=400&fit=crop",
+      "pages": 324,
+      "publisher": "J.B. Lippincott & Co."
+    },
+    {
+      "id": 3,
+      "title": "1984",
+      "author": "George Orwell",
+      "genre": "Dystopian Fiction",
+      "year": 1949,
+      "rating": 4.6,
+      "description": "A dystopian social science fiction novel exploring the dangers of totalitarianism and extreme political ideology.",
+      "cover": "https://images.unsplash.com/photo-1495446815901-a7297e633e8d?w=300&h=400&fit=crop",
+      "pages": 328,
+      "publisher": "Secker & Warburg"
+    },
+    {
+      "id": 4,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "genre": "Romance",
+      "year": 1813,
+      "rating": 4.7,
+      "description": "A romantic novel of manners that critiques the British landed gentry at the end of the 18th century.",
+      "cover": "https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=300&h=400&fit=crop",
+      "pages": 432,
+      "publisher": "T. Egerton"
+    },
+    {
+      "id": 5,
+      "title": "The Catcher in the Rye",
+      "author": "J.D. Salinger",
+      "genre": "Coming-of-age Fiction",
+      "year": 1951,
+      "rating": 4.2,
+      "description": "A story about teenage rebellion and alienation, following Holden Caulfield's experiences in New York City.",
+      "cover": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=300&h=400&fit=crop",
+      "pages": 277,
+      "publisher": "Little, Brown and Company"
+    },
+    {
+      "id": 6,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "genre": "Fantasy",
+      "year": 1937,
+      "rating": 4.7,
+      "description": "A fantasy novel about Bilbo Baggins' adventure to win a share of treasure guarded by a dragon.",
+      "cover": "https://images.unsplash.com/photo-1621351183012-e2f9972dd9bf?w=300&h=400&fit=crop",
+      "pages": 310,
+      "publisher": "George Allen & Unwin"
+    }
+  ]
+}

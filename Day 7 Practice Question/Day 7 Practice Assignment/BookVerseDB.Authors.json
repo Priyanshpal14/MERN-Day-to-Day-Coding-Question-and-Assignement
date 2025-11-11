@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "690ce12947bf7095b763b112"
+  },
+  "name": "Isaac Asimov",
+  "nationality": "American",
+  "birthYear": 1920
+},
+{
+  "_id": {
+    "$oid": "690ce12947bf7095b763b113"
+  },
+  "name": "J.R.R. Tolkien",
+  "nationality": "British",
+  "birthYear": 1892
+},
+{
+  "_id": {
+    "$oid": "690ce12947bf7095b763b114"
+  },
+  "name": "Ursula K. Le Guin",
+  "nationality": "American",
+  "birthYear": 1929
+}]

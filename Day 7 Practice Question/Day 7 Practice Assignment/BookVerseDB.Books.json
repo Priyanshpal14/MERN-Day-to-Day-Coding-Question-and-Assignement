@@ -1,0 +1,122 @@
+[{
+  "_id": {
+    "$oid": "690ce16b47bf7095b763b118"
+  },
+  "title": "Foundation",
+  "genre": "Science Fiction",
+  "publicationYear": 1951,
+  "authorId": {
+    "$oid": "690ccec2c4b373d14a63b112"
+  },
+  "ratings": [
+    {
+      "user": "Alice Johnson",
+      "score": 5,
+      "comment": "Masterpiece of sci-fi"
+    },
+    {
+      "user": "Bob Smith",
+      "score": 4,
+      "comment": "Great worldbuilding"
+    },
+    {
+      "user": "Carol White",
+      "score": 5,
+      "comment": "Best sci-fi series ever"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "690ce16b47bf7095b763b119"
+  },
+  "title": "I, Robot",
+  "genre": "Science Fiction",
+  "publicationYear": 1950,
+  "authorId": {
+    "$oid": "690ccec2c4b373d14a63b112"
+  },
+  "ratings": [
+    {
+      "user": "Carol White",
+      "score": 5,
+      "comment": "Thought-provoking"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "690ce16b47bf7095b763b11a"
+  },
+  "title": "The Hobbit",
+  "genre": "Fantasy",
+  "publicationYear": 1937,
+  "authorId": {
+    "$oid": "690ccec2c4b373d14a63b113"
+  },
+  "ratings": [
+    {
+      "user": "Alice Johnson",
+      "score": 5,
+      "comment": "Timeless classic"
+    },
+    {
+      "user": "Bob Smith",
+      "score": 5,
+      "comment": "Amazing adventure"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "690ce16b47bf7095b763b11b"
+  },
+  "title": "The Lord of the Rings",
+  "genre": "Fantasy",
+  "publicationYear": 1954,
+  "authorId": {
+    "$oid": "690ccec2c4b373d14a63b113"
+  },
+  "ratings": [
+    {
+      "user": "Carol White",
+      "score": 5,
+      "comment": "Epic fantasy"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "690ce16b47bf7095b763b11c"
+  },
+  "title": "The Left Hand of Darkness",
+  "genre": "Science Fiction",
+  "publicationYear": 1969,
+  "authorId": {
+    "$oid": "690ccec2c4b373d14a63b114"
+  },
+  "ratings": [
+    {
+      "user": "Alice Johnson",
+      "score": 4,
+      "comment": "Unique perspective"
+    },
+    {
+      "user": "Bob Smith",
+      "score": 4,
+      "comment": "Interesting concepts"
+    }
+  ]
+},
+{
+  "_id": {
+    "$oid": "690ce50e47bf7095b763b11e"
+  },
+  "title": "A Wizard of Earthsea",
+  "genre": "Fantasy",
+  "publicationYear": 2018,
+  "authorId": {
+    "$oid": "690ccec2c4b373d14a63b114"
+  },
+  "ratings": []
+}]
