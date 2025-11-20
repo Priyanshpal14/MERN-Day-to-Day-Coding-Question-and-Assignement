@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Available Courses - SkillSphere LMS</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎓 SkillSphere LMS</h1>
+      <p class="subtitle">Explore Our Available Courses</p>
+    </header>
+    
+    <main>
+      <% if (courses && courses.length > 0) { %>
+        <div class="courses-grid">
+          <% courses.forEach(course => { %>
+            <div class="course-card">
+              <span class="course-id">Course ID: <%= course.id %></span>
+              <h2 class="course-name"><%= course.name %></h2>
+              <p class="course-duration">📅 Duration: <%= course.duration %></p>
+            </div>
+          <% }) %>
+        </div>
+      <% } else { %>
+        <div class="no-courses">
+          <p>No courses available at the moment.</p>
+        </div>
+      <% } %>
+    </main>
+  </div>
+  
+  <footer>
+    <p>&copy; 2025 SkillSphere LMS. All rights reserved.</p>
+  </footer>
+</body>
+</html>
