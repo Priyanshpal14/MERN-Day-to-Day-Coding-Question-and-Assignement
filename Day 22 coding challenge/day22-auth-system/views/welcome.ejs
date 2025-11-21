@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+    .card { border: 1px solid #ddd; padding: 20px; border-radius: 5px; }
+    a { color: #007bff; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2>Welcome, <%= user.name %>!</h2>
+    <p>Email: <%= user.email %></p>
+    <p>Role: <%= user.role %></p>
+    <% if (user.role === 'admin') { %>
+      <p><a href="/admin">Go to Admin Panel</a></p>
+    <% } %>
+    <p><a href="/logout">Logout</a></p>
+  </div>
+</body>
+</html>

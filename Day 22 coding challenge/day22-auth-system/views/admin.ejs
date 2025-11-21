@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Panel</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; }
+    .admin-panel { background: #f8f9fa; border: 2px solid #28a745; padding: 20px; border-radius: 5px; }
+    h2 { color: #28a745; }
+  </style>
+</head>
+<body>
+  <div class="admin-panel">
+    <h2>Welcome, Admin!</h2>
+    <p>Hello <%= user.name %>, you have access to the admin panel.</p>
+    <p>This is a protected route accessible only to administrators.</p>
+    <p><a href="/welcome">Back to Dashboard</a> | <a href="/logout">Logout</a></p>
+  </div>
+</body>
+</html>
